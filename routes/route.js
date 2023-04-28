@@ -1,10 +1,12 @@
 import { Router } from "express";
+import getGoldPrice from "../modules/getGoldPrice";
 
 let router = Router();
 
 router
   .get("/", (_, res) => {
-    res.status(200).json("Running");
+    let data = getGoldPrice();
+    res.send(`${data}`)
   })
 
 export default router;
