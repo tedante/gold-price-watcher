@@ -13,6 +13,8 @@ export const PORT = process.env.PORT || 3000;
 export const NODE_ENV = process.env.NODE_ENV || "development";
 export const TIMEZONE = process.env.TIMEZONE || "Asia/Jakarta";
 
+export const TARGET_PRICE = +process.env.TARGET_PRICE || 900000;
+
 /**
  * --------------------------------------------
  * REDIS

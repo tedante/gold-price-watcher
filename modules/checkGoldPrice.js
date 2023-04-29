@@ -1,13 +1,10 @@
 import { getGoldPrice } from "./getGoldPrice.js";
-import * as data from "../data/target-price.json" assert {
-  type: 'json',
-  integrity: 'sha384-ABC123'
-};
+import { TARGET_PRICE } from "#config/general";
 
 export const checkGoldPrice = async () => {
   const currentPrice = await getGoldPrice()
 
-  let targetPrice = data.default.target_price
+  let targetPrice = TARGET_PRICE
 
   if (currentPrice <= targetPrice) return {
     status: true,
