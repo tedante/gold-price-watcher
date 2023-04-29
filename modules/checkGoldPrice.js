@@ -1,19 +1,23 @@
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc.js';
-import timezone from 'dayjs/plugin/timezone.js';
-import * as config from "#config/app";
-import axios from "axios";
+import { getGoldPrice } from "./getGoldPrice.js";
+import * as data from "../data/target-price.json" assert {
+  type: 'json',
+  integrity: 'sha384-ABC123'
+};
 
-// dependent on utc plugin
-dayjs.extend(utc)
-dayjs.extend(timezone)
+export const checkGoldPrice = async () => {
+  const currentPrice = await getGoldPrice()
 
-export const checkGoldPrice = async (requestBody) => {
-  const { data } = await axios({
-    method: "PUT",
-    url: ``,
-    headers: {
-      Authorization: ``,
-    },
-  });
+  let targetPrice = data.default.target_price
+
+  if (currentPrice <= targetPrice) return {
+    status: true,
+    targetPrice,
+    currentPrice
+  }
+
+  return {
+    status: false,
+    targetPrice,
+    currentPrice
+  }
 }

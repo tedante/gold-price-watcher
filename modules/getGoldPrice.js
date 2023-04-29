@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-export const getGoldPrice = async (requestBody) => {
+export const getGoldPrice = async () => {
   const axiosResponse = await axios.request({
     method: "GET",
     url: "https://pluang.com/widgets/price-graph/desktop-vertical",
