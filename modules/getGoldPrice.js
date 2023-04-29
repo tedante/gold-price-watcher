@@ -1,12 +1,5 @@
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc.js';
-import timezone from 'dayjs/plugin/timezone.js';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-
-// dependent on utc plugin
-dayjs.extend(utc)
-dayjs.extend(timezone)
 
 export const getGoldPrice = async (requestBody) => {
   const axiosResponse = await axios.request({
@@ -21,7 +14,9 @@ export const getGoldPrice = async (requestBody) => {
 
   let price = $('#gold-price').text()
 
-  return price
+  let priceNumber = formatToInteger(price)
+
+  return priceNumber
 }
 
 export const formatToInteger = (value) => {

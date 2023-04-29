@@ -7,6 +7,7 @@ const testGetGoldPrice = async () => {
 
   return false
 }
+
 const testFormatToInteger = () => {
   let value = "Rp1.012.344/g"
   let data = formatToInteger(value)
