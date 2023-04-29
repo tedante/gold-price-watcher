@@ -1,14 +1,16 @@
 import cron from "node-cron";
 import { TIMEZONE } from "#config/general";
+import { goldPrice } from "#modules/goldPrice";
 
 function schedule() {
   cron.schedule(
     "* * * * *",
     async () => {
       try {
-        console.log("runing");
+        console.log("running");
+        await goldPrice()
       } catch (err) {
-        console.log(err, "err in cron auto message");
+        console.log(err, "err in cron");
       }
     },
     {

@@ -24,3 +24,15 @@ export const TIMEZONE = process.env.TIMEZONE || "Asia/Jakarta";
 export const REDIS_PORT = process.env.REDIS_PORT || 6379;
 export const REDIS_HOST = process.env.REDIS_HOST || "127.0.0.1";
 export const REDIS_PASSWORD = process.env.REDIS_PASSWORD || "";
+
+/**
+ * --------------------------------------------
+ * EMAIL
+ * - USER
+ * - PASSWORD
+ * - SERVICE
+ * --------------------------------------------
+ */
+export const EMAIL_USER = process.env.EMAIL_USER;
+export const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+export const EMAIL_SERVICE = process.env.EMAIL_SERVICE;
