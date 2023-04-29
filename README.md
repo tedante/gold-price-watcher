@@ -1,6 +1,6 @@
 # Gold Price Watcher
 
-This app is for checking a gold price every day and if the price is hit the `value` you want, they gonna send you email.
+This app is for checking a gold price from source(`pluang.com`) with schedule and if the price is hit the `value` you want, they gonna send you email.
 
 ## Getting Started
 
