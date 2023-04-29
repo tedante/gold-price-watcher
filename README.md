@@ -5,7 +5,6 @@ This app is for checking a gold price every day and if the price is hit the `val
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-See deployment for notes on how to deploy the project on a live system.
 
 ## Prerequisites
 
@@ -41,26 +40,6 @@ nodemon app.js
 
 ## Structure
 
-- `helpers`
-
-General functions used in several modules are placed here.
-
-- `controllers`
-
-the place for storing a handler request.
-
 - `modules`
 
 the place for storing a logic application.
-
-- `queue`
-
-function who is need to queue. background running task is placed here.
-
-## How to pull and restart app in the server
-1. go to root directory app
-2. run `pm2 ls`
-3. run `pm2 restart <app-name>`. example `pm2 restart fsjs-tools-server`
-
-## Contributor
-* **Teddy Koerniadi** - [tedante](https://github.com/tedante)

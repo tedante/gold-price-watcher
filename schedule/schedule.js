@@ -4,7 +4,7 @@ import { goldPrice } from "#modules/goldPrice";
 
 function schedule() {
   cron.schedule(
-    "* * * * *",
+    "0 9 * * *",
     async () => {
       try {
         console.log("running");
