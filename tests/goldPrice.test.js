@@ -1,11 +1,10 @@
 import { goldPrice } from "#modules/goldPrice";
+import { expect, test } from '@jest/globals';
 
-const testgoldPrice = async () => {
-  let data = await goldPrice()
+describe('goldPrice module', () => {
+  test(`should have a truthy value`, async () => {
+    let data = await goldPrice()
 
-  if (data) return true
-
-  return false
-}
-
-console.log(`TEST goldPrice`, await testgoldPrice());
+    expect(data).toBeTruthy();
+  });
+});
