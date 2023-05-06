@@ -1,9 +1,16 @@
 import { checkGoldPrice } from "./checkGoldPrice.js";
 import { EMAIL_USER, EMAIL_PASSWORD, EMAIL_SERVICE } from "#config/general";
 import nodemailer from "nodemailer"
+import { getGoldPrice } from "./getGoldPrice.js";
+import { TARGET_PRICE } from "#config/general";
+
 
 export const goldPrice = async () => {
-  let objGoldPrice = await checkGoldPrice()
+  const currentPrice = await getGoldPrice()
+
+  let targetPrice = TARGET_PRICE
+
+  let objGoldPrice = checkGoldPrice(currentPrice, targetPrice)
 
   try {
     if (objGoldPrice.status) {
